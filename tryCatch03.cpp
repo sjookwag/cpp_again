@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void pop(vector<int> &v) {
+    if (v.size() <= 0) { //예외 발생
+        throw string("Underflow!");
+    }
+    v.pop_back();
+}
+
+void main() {
+    vector <int> v{ 1,2,3 };
+    try
+    {
+        while (true) {
+            pop(v);
+        }
+    }
+    catch (string error)
+    {
+        cout << error << endl;
+    }
+}
